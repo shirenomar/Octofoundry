@@ -1,5 +1,7 @@
 <div class="row p-2 h-100">
-    <div class="col-auto">filter configuration</div>
+    <div class="col-auto">
+        <app-employees-filters></app-employees-filters>
+    </div>
     <div class="col">
 
         <div *ngIf="employeesList$ | async as data">
