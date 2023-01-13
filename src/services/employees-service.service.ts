@@ -1,0 +1,16 @@
+import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { map, Observable } from 'rxjs';
+import { Employee } from 'src/models/employee';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class EmployeesServiceService {
+
+  constructor(private http: HttpClient) { }
+
+  getEmployeesList(): Observable<Employee[]> {
+    return this.http.get<any>("./assets/employees.json").pipe(map((respons) => respons.data.employees));
+  }
+}

@@ -1,0 +1,46 @@
+{
+    "data": {
+        "employees": [
+            {
+                "id": "1",
+                "firstName": "Tom",
+                "lastName": "Cruise",
+                "email": "tom.cruise@gmail.com",
+                "phone": "023844635242",
+                "date": "11022022",
+                "country": "egypt",
+                "company": "eBay"
+            },
+            {
+                "id": "2",
+                "firstName": "Maria",
+                "lastName": "Sharapova",
+                "email": "maria.sharapova@gmail.com",
+                "phone": "023844635242",
+                "date": "11022022",
+                "country": "syria",
+                "company": "Startbucks"
+            },
+            {
+                "id": "3",
+                "firstName": "James",
+                "lastName": "Bond",
+                "email": "James.Bond@gamil.com",
+                "phone": "023844635242",
+                "date": "11022022",
+                "country": "saudiAraba",
+                "company": "Facebook"
+            },
+            {
+                "id": "4",
+                "firstName": "tomas",
+                "lastName": "mark",
+                "email": "tomas.mark@gmail.com",
+                "phone": "023844635242",
+                "date": "11022022",
+                "country": "qatar",
+                "company": "eBay"
+            }
+        ]
+    }
+}
