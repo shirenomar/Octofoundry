@@ -15,6 +15,6 @@ export class EmployeesServiceService {
   }
 
   getCountries(): Observable<any> {
-    return this.http.get<any>(`https://api.covid19api.com/countries`).pipe(tap(response => console.log(response)))
+    return this.http.get<any>(`https://api.covid19api.com/countries`);
   }
 }

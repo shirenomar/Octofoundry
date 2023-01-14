@@ -1,45 +1,52 @@
-<mat-card>
-    <div class="text-center fs-2 fw-bold">Filters</div>
-    <!-- Form Content -->
-    <form [formGroup]="filterForm"
-          class="form-container">
-        <mat-form-field>
-            <mat-label>Email</mat-label>
-            <input matInput
-                   placeholder="Email"
-                   formControlName="email">
-        </mat-form-field>
+<div class="text-center fs-2 fw-bold p-2 pt-3">Filters</div>
+<!-- Form Content -->
+<form [formGroup]="filterForm"
+      class="form-container p-3">
+    <mat-form-field>
+        <mat-label>Email</mat-label>
+        <input matInput
+               placeholder="Email"
+               formControlName="email">
+    </mat-form-field>
 
-        <mat-form-field>
-            <mat-label>Phone Number</mat-label>
-            <input matInput
-                   placeholder="phoneNumber"
-                   formControlName="phoneNumber">
-        </mat-form-field>
+    <mat-form-field>
+        <mat-label>Phone Number</mat-label>
+        <input matInput
+               placeholder="phoneNumber"
+               formControlName="phoneNumber">
+    </mat-form-field>
 
-        <mat-form-field>
-            <mat-label>Company</mat-label>
-            <input matInput
-                   placeholder="company"
-                   formControlName="company">
-        </mat-form-field>
+    <mat-form-field>
+        <mat-label>Company</mat-label>
+        <input matInput
+               placeholder="company"
+               formControlName="company">
+    </mat-form-field>
 
-        <mat-form-field>
-            <mat-select placeholder="Country"
-                        formControlName="country">
-                <mat-option *ngFor="let country of countries$ | async">
-                    {{country.Country}}
-                </mat-option>
-            </mat-select>
-        </mat-form-field>
-        <mat-form-field>
-            <input matInput
-                   [matDatepicker]="picker"
-                   formControlName="date"
-                   placeholder="Choose a date">
-            <mat-datepicker-toggle matSuffix
-                                   [for]="picker"></mat-datepicker-toggle>
-            <mat-datepicker #picker></mat-datepicker>
-        </mat-form-field>
-    </form>
-</mat-card>
+    <mat-form-field>
+        <mat-select placeholder="Country"
+                    formControlName="country">
+            <mat-option *ngFor="let country of countries$ | async"
+                        [value]="country.Country">
+                {{country.Country}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput
+               [matDatepicker]="picker"
+               formControlName="date"
+               placeholder="Choose a date">
+        <mat-datepicker-toggle matSuffix
+                               [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+</form>
+<div class="text-center">
+    <button mat-raised-button
+            color="primary"
+            (click)="onSubmit()">Apply Filter</button>
+    <button mat-button
+            color="primary"
+            (click)="onReset()">reset</button>
+</div>

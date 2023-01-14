@@ -3,43 +3,75 @@
         "employees": [
             {
                 "id": "1",
-                "firstName": "Tom",
-                "lastName": "Cruise",
+                "name": "Tom Cruise",
                 "email": "tom.cruise@gmail.com",
-                "phone": "023844635242",
-                "date": "11022022",
+                "phoneNumber": "01274546052",
+                "date": "10-Jul-2022",
                 "country": "egypt",
                 "company": "eBay"
             },
             {
                 "id": "2",
-                "firstName": "Maria",
-                "lastName": "Sharapova",
-                "email": "maria.sharapova@gmail.com",
-                "phone": "023844635242",
-                "date": "11022022",
+                "name": "Maria Sharapova",
+                "email": "maria.sharap@gmail.com",
+                "phoneNumber": "01131946092",
+                "date": "15-Jan-2023",
                 "country": "syria",
                 "company": "Startbucks"
             },
             {
                 "id": "3",
-                "firstName": "James",
-                "lastName": "Bond",
+                "name": "James Bond",
                 "email": "James.Bond@gamil.com",
-                "phone": "023844635242",
-                "date": "11022022",
+                "phoneNumber": "01001945012",
+                "date": "30-Aug-2022",
                 "country": "saudiAraba",
                 "company": "Facebook"
             },
             {
                 "id": "4",
-                "firstName": "tomas",
-                "lastName": "mark",
+                "name": "Tomas Mark",
                 "email": "tomas.mark@gmail.com",
-                "phone": "023844635242",
-                "date": "11022022",
+                "phoneNumber": "01006649010",
+                "date": "11-Oct-2022",
                 "country": "qatar",
                 "company": "eBay"
+            },
+            {
+                "id": "5",
+                "name": "George Tom",
+                "email": "go.tom@gmail.com",
+                "phoneNumber": "01037465427",
+                "date": "19-Feb-2022",
+                "country": "sudan",
+                "company": "twitter"
+            },
+            {
+                "id": "6",
+                "name": "Ahmed Omar",
+                "email": "ahmed.o@gmail.com",
+                "phoneNumber": "01139469427",
+                "date": "29-Feb-2022",
+                "country": "malaysia",
+                "company": "google"
+            },
+            {
+                "id": "7",
+                "name": "Mohamed Kamal",
+                "email": "mo.kamal@gmail.com",
+                "phoneNumber": "01239499420",
+                "date": "29-Mar-2022",
+                "country": "lebanon",
+                "company": "facebook"
+            },
+            {
+                "id": "8",
+                "name": "Mahmoud Mostafa",
+                "email": "mo.mostafa@gmail.com",
+                "phoneNumber": "01132439720",
+                "date": "23-Mar-2022",
+                "country": "kuwait",
+                "company": "Startbucks"
             }
         ]
     }

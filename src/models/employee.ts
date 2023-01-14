@@ -1,8 +1,7 @@
 export class Employee {
     id?: string;
-    firstName?: string;
-    lastName?: string;
-    phone?: string;
+    name?: string;
+    phoneNumber?: string;
     country?: string;
     date: string;
     company?: string;

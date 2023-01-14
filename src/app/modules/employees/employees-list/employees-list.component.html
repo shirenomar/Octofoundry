@@ -1,11 +1,21 @@
-<div class="row p-2 h-100">
-    <div class="col-auto">
-        <app-employees-filters></app-employees-filters>
-    </div>
-    <div class="col">
-
+<mat-sidenav-container class="position-absolute h-100 w-100 container-bg">
+    <mat-sidenav mode="side"
+                 opened><app-employees-filters
+                               (onFilterEvent)="onFilterChanged($event)"></app-employees-filters></mat-sidenav>
+    <mat-sidenav-content class="p-2">
+        <!-- search functionality -->
+        <div class="text-right">
+            <mat-form-field class="example-full-width">
+                <span matPrefix> </span>
+                <input type="tel"
+                       matInput
+                       placeholder="Search By Name"
+                       name="search"
+                       [(ngModel)]="searchKey">
+            </mat-form-field>
+        </div>
         <div *ngIf="employeesList$ | async as data">
-            <mat-table [dataSource]="data">
+            <mat-table [dataSource]="data | search: searchKey">
 
                 <ng-container matColumnDef="id">
                     <mat-header-cell *matHeaderCellDef>#</mat-header-cell>
@@ -14,7 +24,7 @@
 
                 <ng-container matColumnDef="name">
                     <mat-header-cell *matHeaderCellDef>Name</mat-header-cell>
-                    <mat-cell *matCellDef="let row">{{ row.firstName + ' ' + row.lastName }}</mat-cell>
+                    <mat-cell *matCellDef="let row">{{ row.name }}</mat-cell>
                 </ng-container>
 
                 <ng-container matColumnDef="date">
@@ -29,7 +39,7 @@
 
                 <ng-container matColumnDef="phone">
                     <mat-header-cell *matHeaderCellDef>Phone</mat-header-cell>
-                    <mat-cell *matCellDef="let row">{{ row.phone }}</mat-cell>
+                    <mat-cell *matCellDef="let row">{{ row.phoneNumber }}</mat-cell>
                 </ng-container>
 
                 <ng-container matColumnDef="country">
@@ -44,8 +54,8 @@
 
 
                 <mat-header-row *matHeaderRowDef="columns"></mat-header-row>
-                <mat-row *matRowDef="let row; columns: columns;"></mat-row>
+                <mat-row *matRowDef="let row ; columns: columns"></mat-row>
             </mat-table>
         </div>
-    </div>
-</div>
+    </mat-sidenav-content>
+</mat-sidenav-container>

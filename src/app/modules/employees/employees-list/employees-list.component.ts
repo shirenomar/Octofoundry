@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable, tap } from 'rxjs';
+import { map, Observable } from 'rxjs';
 import { Employee } from 'src/models/employee';
+import { FilterConfig } from 'src/models/filter-config';
 import { EmployeesServiceService } from 'src/services/employees-service.service';
 
 @Component({
@@ -11,11 +12,28 @@ import { EmployeesServiceService } from 'src/services/employees-service.service'
 export class EmployeesListComponent implements OnInit {
 
   employeesList$: Observable<Employee[]>
+  searchKey: string;
+  queryParams: string;
   columns = ['id', 'name', 'email', 'date', 'phone', 'country', 'company'];
   constructor(private employeesServiceService: EmployeesServiceService) { }
 
   ngOnInit(): void {
-    this.employeesList$ = this.employeesServiceService.getEmployeesList().pipe(tap((r) => console.log(r)));
+    this.employeesList$ = this.employeesServiceService.getEmployeesList();
+  }
+
+
+  onFilterChanged($event: any) {
+    const filterconfig = $event as FilterConfig[];
+    this.employeesList$ = this.employeesServiceService.getEmployeesList().pipe(
+      map(employees => {
+        let updatedEmpList = employees;
+        for (let filter of filterconfig) {
+          if (filter.value) {
+            updatedEmpList = updatedEmpList.filter((emp) => (emp[filter.field]?.toLowerCase() || '').includes(filter.value.toLowerCase()));
+          }
+        }
+        return updatedEmpList;
+      }))
   }
 
 }
